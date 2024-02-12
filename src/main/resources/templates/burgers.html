@@ -110,13 +110,16 @@
                 </div>
                 <form class="order-form-inputs">
                     <div class="order-form-input">
-                        <input type="text" placeholder="Ваш заказ" id="burgers" data-base-burgers-id="">
+                        <input type="text" placeholder="Ваш заказ" id="burgers" data-base-burgers-id="" required>
+                        <label for="burgers" class="error-message"></label>
                     </div>
                     <div class="order-form-input">
-                        <input type="text" placeholder="Ваше имя" id="userName">
+                        <input type="text" placeholder="Ваше имя" id="userName" required>
+                        <label for="userName" class="error-message"></label>
                     </div>
                     <div class="order-form-input">
-                        <input type="text" placeholder="Ваш телефон" id="userPhone">
+                        <input type="phone" placeholder="Ваш телефон" id="userPhone" required>
+                        <label for="userPhone" class="error-message"></label>
                     </div>
                     <button class="button" id="order-action">Оформить заказ</button>
                 </form>

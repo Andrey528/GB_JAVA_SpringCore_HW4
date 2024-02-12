@@ -7,10 +7,12 @@ import com.example.GB_JAVA_SpringCore_HW4.services.BurgerService;
 import com.example.GB_JAVA_SpringCore_HW4.services.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +20,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
-@Controller
+@RestController
 @RequestMapping("/order")
 public class OrderController {
     @Autowired
@@ -27,7 +29,7 @@ public class OrderController {
     private final BurgerService burgerService;
 
     @PostMapping
-    public String getOrder(@RequestBody Map<String, Object> requestData) {
+    public ResponseEntity<Void> getOrder(@RequestBody Map<String, Object> requestData) {
         // Создаем объекты Burger
         List<Object> burgersIdObjects = (List<Object>) requestData.get("burgersId");
         List<Long> burgersId = burgersIdObjects.stream()
@@ -49,6 +51,6 @@ public class OrderController {
         order.setUser(user);
 
         orderService.saveOrder(order);
-        return "burgers";
+        return ResponseEntity.ok().build();
     }
 }
