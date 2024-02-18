@@ -1,4 +1,4 @@
-package com.example.GB_JAVA_SpringCore_HW4.controllers;
+package com.example.GB_JAVA_SpringCore_HW4.controllers.rest;
 
 import com.example.GB_JAVA_SpringCore_HW4.models.Burger;
 import com.example.GB_JAVA_SpringCore_HW4.models.Order;

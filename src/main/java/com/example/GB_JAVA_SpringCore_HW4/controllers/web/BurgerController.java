@@ -1,15 +1,15 @@
-package com.example.GB_JAVA_SpringCore_HW4.controllers;
+package com.example.GB_JAVA_SpringCore_HW4.controllers.web;
 
 import com.example.GB_JAVA_SpringCore_HW4.services.BurgerService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @AllArgsConstructor
-@RestController
+@Controller
 @RequestMapping("/burgers")
 public class BurgerController {
     @Autowired
